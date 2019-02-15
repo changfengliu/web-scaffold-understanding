@@ -1,7 +1,7 @@
 module.exports = {
 	title: "前端构建工具",
 	description: '',
-	base: '/docs/',
+	base: '/web-scaffold-understanding/',
 	dest: './docs',
 	themeConfig: {
     nav: [
