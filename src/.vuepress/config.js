@@ -1,5 +1,5 @@
 module.exports = {
-	title: "前端构建工具",
+	title: "前端工具篇",
 	description: '',
 	base: '/web-scaffold-understanding/',
 	dest: './docs',
@@ -9,12 +9,11 @@ module.exports = {
     ],
 		search: true,
     sidebar: [
-			'history.md',
 			{
         title: 'JS 预处理',
         collapsable: false,
+				path: 'js-preprocessor.md',
         children: [
-					'js-preprocessor.md',
           '/babel.md',
 					'/babel-deepen.md'
         ]

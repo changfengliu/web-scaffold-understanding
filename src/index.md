@@ -1,36 +1,23 @@
-# 本书内容
+# 概述
 
-1. 梳理前端开发过程中使用到的各类工具，准确清晰地理解它们。
-2. 了解这些工具的运行原理。
-2. 以 webpack / babel 为主，并与其它同类工具做横向比较。
+## 本书目的
 
-近几年来，前端开发有了较大的发展，如：
-<!--概览图-->
+1. 梳理前端开发中用到的各类工具，务求准确清晰地理解它们
+2. 了解这些工具的运行原理
+
+## 前端开发概览
+
 <img src="./assets/images/overview.png" width="1400px" style="max-width:5000px;margin-left:-80px;margin-top:-40px"/>
 
-为什么前端开发变得那么复杂？
-1. js/css/html表现力不够。
-2. web app 变得越来越复杂。
-3. 多浏览器兼容。
+**如图所示：**
 
+前端开发本质上还是包含三个方面：JavaScript / HTML / CSS。早期的前端开发，我们只需要写一个 html 文件，然后在里面引入 CSS / JS 文件就可以了。但是所谓的现代前端开发，远远不是那么简单了。
 
-得益于 NodeJS 与其它命令行工具集，前端开发的形式非常丰富。
+**为什么前端开发变得那么复杂呢？**
 
-描述网页的三种技术：HTML/CSS/JavaScript 没有变化，
+我觉得有两个原因：
 
-包管理器 npm/yarn/bower
-打包器 webpack
-预编译 babel/scss
-压缩混淆 uglifyjs
-性能工具： ？
+1. 前端应用变得越来越复杂，原生 JS / CSS / HTML 的表现力不够用了
+3. 浏览器兼容。
 
-BootStrap
-
-JS 库：jQuery backbone.js Lodash
-JS 框架：Vue React Angular.js
-JS 预处理：
-	Babel / TypeScript / Traceur
-CSS 预处理：
-	Sass / Less.js / Stylus / Compass
-
-代码检查：JSHint, JSLint, JSCS, ESLint
+得益于 nodeJS 与编译技术，出现了很多上层的 DSL 语言，极大地释放了前端的生产力。
