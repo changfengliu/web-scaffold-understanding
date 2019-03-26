@@ -1,40 +1,51 @@
-# webpack 能做什么？
+# webpack
 
+## what
 
-Webpack is
-a module bundler and not a task runner.
-a static build tool, not a module loader.
-
-核心概念
-entry
-    The contextual root of your app.
-    The first js file to load to ‘kick-off’ your app in the browser.
-output
-    Tells webpack where and how to distribute bundles.
-loader
-    Tells webpack how to load files in your content base.
-plugins
-    a class/function, which apply functionality at the compilation level
-    a plugin is an ES5 ‘class’ which implements an apply function, the compiler uses it to emit events.
-    80% of webpack is made up of its own plugin system.
-
-
-
-
-
+Webpack is：
+- a **module bundler** and not a task runner.
+- a **static** build tool, not a module loader.
 
 前端模块管理工具/打包器。它将前端资源 js/css/html/image/fonts等，打包成 js  模块，然后统一管理。
 https://webpack.js.org/
 
 
 Webpack是JS应用程序的模块(资源)打包器，它把JS应用程序开发过程中的所有资源都看作一个模块，包括JS、CSS、图片等。它在运行时递归地解析所有模块的依赖关系，构建依赖关系图，而后产生一个bundle.js，供浏览器直接加载。
+
 特点：
-所有的都是模块
-本身仅识别JavaScript(有编译过程，其它资源不解析或通过第三方插件解析)
-模块相对独立，相互依赖
-打包过程高度可配置
+- 所有的都是模块
+- 本身仅识别JavaScript(有编译过程，其它资源不解析或通过第三方插件解析)
+- 模块相对独立，相互依赖
+- 打包过程高度可配置
 
 <img src="./assets/images/webpack.png"/>
+
+## 核心概念
+
+### entry
+The contextual root of your app.
+
+The first js file to load to ‘kick-off’ your app in the browser.
+
+### output
+Tells webpack where and how to distribute bundles.
+
+### loader
+Tells webpack how to load files in your content base.
+
+### plugins
+a class/function, which apply functionality at the compilation level
+
+a plugin is an ES5 ‘class’ which implements an apply function, the compiler uses it to emit events.
+
+80% of webpack is made up of its own plugin system.
+
+
+
+
+
+
+
 
 
 
@@ -76,7 +87,8 @@ requireComponent.keys().forEach(fileName => {
 
 
 
-关于代码切割
+## 代码切割
+
 Src — code split —> bundle  然后这些 bundle 就可以被按需加载，或并行加载。
 代码切割的方式：
 1.webpack entry
@@ -87,13 +99,14 @@ Src — code split —> bundle  然后这些 bundle 就可以被按需加载，�
 Parent Chunk 中  Prefetch 后续可能用到的 chunk.
 
 
-webpack cli
+## webpack cli
 webpack -p ：prd模式的编译.
 全写：webpack --optimize-minimize --define process.env.NODE_ENV="'production'"
 
 
 
-tree-shaking 其实也确实不是什么特别神的东西，原理而言 @顾轶灵 的回答已经讲得比较清楚了，我想指出的一点就是不管是 rollup 还是 webpack 2，tree-shaking 都是因为 ES6 modules 的静态特性才得以实现的。ES6 modules 的 import 和 export statements 相比完全动态的 CommonJS require，有着本质的区别。举例来说：
+## tree-shaking
+其实也确实不是什么特别神的东西，原理而言 @顾轶灵 的回答已经讲得比较清楚了，我想指出的一点就是不管是 rollup 还是 webpack 2，tree-shaking 都是因为 ES6 modules 的静态特性才得以实现的。ES6 modules 的 import 和 export statements 相比完全动态的 CommonJS require，有着本质的区别。举例来说：
 1. 只能作为模块顶层的语句出现，不能出现在 function 里面或是 if 里面。（ECMA-262 15.2)
 2. import 的模块名只能是字符串常量。(ECMA-262 15.2.2)
 3. 不管 import 的语句出现的位置在哪里，在模块初始化的时候所有的 import 都必须已经导入完成。换句话说，ES6 imports are hoisted。(ECMA-262 15.2.1.16.4 - 8.a)
@@ -106,7 +119,7 @@ https://www.zhihu.com/question/41922432
 
 
 
-插件列表：
+## 插件列表
 LoaderOptionsPlugin    :    
 由于webpack2+已不允许扩展webpack配置，此插件提供了一种方式，把option 传递给所有loader
 https://webpack.js.org/plugins/loader-options-plugin/
@@ -115,11 +128,7 @@ DefinePlugin    :
 扫描所有源代码，执行搜索替换的操作。
 
 
-
-
-
-
-load特性
+## loader
 * Loaders can be chained. They are applied in a pipeline to the resource. A chain of loaders are compiled chronologically. The first loader in a chain of loaders returns a value to the next. At the end loader, webpack expects JavaScript to be returned.
 * Loaders can be synchronous or asynchronous.
 * Loaders run in Node.js and can do everything that’s possible there.
@@ -136,3 +145,5 @@ Raw Loader
 Pitching Loader
 
 loader上下文
+
+## 热加载

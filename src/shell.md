@@ -1,4 +1,4 @@
-# shell 脚本
+# shell
 
 更简洁的前端构建工具集。
 https://gulpjs.com/

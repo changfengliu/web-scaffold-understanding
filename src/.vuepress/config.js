@@ -5,7 +5,33 @@ module.exports = {
 	dest: './docs',
 	themeConfig: {
     nav: [
-	    { text: '首页', link: '/index.md' }
+	    { text: '首页', link: '/index.md' },
+			{
+				text: '官网',
+				items: [{
+					text: 'Babel',
+					link: 'https://babeljs.io/'
+				}, {
+					text: 'Webpack',
+					link: 'https://webpack.js.org/'
+				}, {
+					text: '---------',
+					link: ''
+				}, {
+					text: 'Vuepress',
+					link: 'https://vuepress.vuejs.org'
+				}, {
+					text: 'Mermaid',
+					link: 'https://mermaidjs.github.io/'
+				}]
+			},
+			{
+				text: '工具',
+				items: [{
+					text: 'Babel 在线转译',
+					link: 'https://babeljs.io/repl'
+				}]
+			}
     ],
 		search: true,
     sidebar: [
@@ -18,34 +44,29 @@ module.exports = {
 					'/babel-deepen.md'
         ]
       },
+			'/css-preprocessor.md',
 			{
-        title: 'CSS 预处理',
+        title: 'Html 预处理',
         collapsable: false,
         children: [
-					'/css-preprocessor.md'
+					'/templating.md',
+					'/v-dom.md'
         ]
       },
 			{
-        title: 'Templating',
+        title: '打包器(moduler)',
         collapsable: false,
         children: [
-					'/templating.md'
+					'module.md',
+					'webpack.md',
+					'webpack-deepen.md',
         ]
       },
 			{
-        title: '专门工具',
-        collapsable: false,
-        children: [
-					'module.md'
-        ]
-      },
-			{
-        title: '构建工具',
+        title: '构建工具(task runner)',
         collapsable: false,
         children: [
           'shell.md',
-					'webpack.md',
-					'webpack-deepen.md',
 					'grunt.md',
 					'gulp.md',
 					'fis3.md'
